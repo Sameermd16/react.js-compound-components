@@ -1,24 +1,21 @@
-import logo from './logo.svg';
+
 import './App.css';
+import Menu from './components/Menu/Menu';
+import MenuButton from './components/Menu/MenuButton';
+import MenuDropdown from './components/Menu/MenuDropdown';
+import MenuItem from './components/Menu/MenuItem'
 
 function App() {
+  const sports=["Volleyball", "Pickleball", "Baseball", "Racquetball"]
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Menu>
+      <MenuButton>Sports</MenuButton>
+      <MenuDropdown items={sports}>
+        {sports.map((sport) => {
+          return <MenuItem>{sport}</MenuItem>
+        })}
+      </MenuDropdown>
+    </Menu>
   );
 }
 
