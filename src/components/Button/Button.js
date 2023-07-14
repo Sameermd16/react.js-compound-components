@@ -2,7 +2,7 @@
 
 function Button(props) {
     return (
-        <button {...props}>click me for dropdown</button>
+        <button {...props}>{props.children}</button>
     )
 }
 

@@ -1,10 +1,16 @@
 
 import Button from '../Button/Button'
+import { MenuContext } from './Menu'
+import React from "react"
+
 
 function MenuButton(props) {
-    console.log(props)
+
+    console.log("props in menu: ", props)
+    const {toggle} = React.useContext(MenuContext)
+
     return (
-        <Button {...props}>{props.children}</Button>
+        <Button onClick={toggle}>{props.children}</Button>
     )
 }
 
